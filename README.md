@@ -1,6 +1,6 @@
 # Todo-List
 
-Este es el proyecto inicial para crear aplicaciones utilizando webpack y JavaScript.
+Esta es una aplicacion de todos hecha con webpack y JavaScript. 
 
 ### Notas:
 Recuerden reconstruir los módulos de Node 
