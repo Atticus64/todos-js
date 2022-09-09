@@ -1,5 +1,5 @@
 
-import { Todo } from "../classes";
+import { Todo, TodoList } from "../classes";
 import { todoList } from "../index"
 
 // referencias en html
@@ -70,7 +70,7 @@ divTodoList.addEventListener( 'click', (event) => {
         }
 
     }else if( nElemento.includes('button') ){ // click en eliminar ❌
-        todoList.eliminarTodo( todoId );
+        todoList.eliminarTodo( todoId , todoElemento.classList.contains('completed'));
         divTodoList.removeChild( todoElemento ); // Otra forma de eliminar un elemento HTML
     }
 

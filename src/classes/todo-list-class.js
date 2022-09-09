@@ -15,11 +15,17 @@ export class TodoList {
         this.guardarLocalStorage();
     }
 
-    eliminarTodo( id ){
+    eliminarTodo( id , completado){
         this.todos = this.todos.filter( todo => todo.id != id );
+
+        let compl = this.todos.filter( todo => todo.completado != false );
+        if (compl.length > 0) {
+            Todo.$conteo = this.todos.length - compl.length;
+        } else {
+            Todo.$conteo = this.todos.length;
+        }
         // va a regresar un nuevo arreglo con todos los todos diferentes al que seleccione
         // sea diferente a este id 
-        Todo.$conteo = this.todos.length
         conteoPendi();
         this.guardarLocalStorage();
     }
@@ -53,6 +59,8 @@ export class TodoList {
         : this.todos = [];
 
         // this.todos = this.todos.map( obj => Todo.fromJson( obj ) );
+        let lng = this.todos.filter(todo => todo.completado).length
+        Todo.$conteo = Todo.$conteo - lng
         this.todos = this.todos.map( Todo.fromJson );
     
     }
