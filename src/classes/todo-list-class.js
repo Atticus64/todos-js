@@ -17,10 +17,10 @@ export class TodoList {
 
     eliminarTodo( id ){
         this.todos = this.todos.filter( todo => todo.id != id );
-        Todo.$conteo -= 1;
-        conteoPendi();
         // va a regresar un nuevo arreglo con todos los todos diferentes al que seleccione
         // sea diferente a este id 
+        Todo.$conteo = this.todos.length
+        conteoPendi();
         this.guardarLocalStorage();
     }
 
